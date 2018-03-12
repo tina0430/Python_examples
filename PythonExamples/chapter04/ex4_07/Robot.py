@@ -1,5 +1,6 @@
 class Robot :
     name = '건담'
-    energy = 90
+    energy = 50
     def attack(self):
-        return '발차기'
+        self.energy -= 10
+        return '발차기, 남은 에너지 ' + str(self.energy)
