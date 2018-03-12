@@ -1,5 +1,5 @@
-from ex4_06.Food import Food
-from ex4_06.Fridge import Fridge
+from chapter04.ex4_06.food import Food
+from chapter04.ex4_06.fridge import Fridge
 
 myFridge = Fridge()
 

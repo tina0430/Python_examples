@@ -1,4 +1,4 @@
-from chapter04.ex4_07.Robot import Robot
+from chapter04.ex4_07.robot import Robot
 
 print('메인 시작!')
 robot1 = Robot()                  #새로운 Robot인스턴스를 robot이 참조
