@@ -50,11 +50,24 @@
 # result = open('result.txt', 'w', encoding='utf-8')
 # result.write(str(total))
 # result.close()
-import re
+# import re
+# 
+# mylist = ['acccb', 'a....b', 'aaab', 'a.cccb']
+# for i in mylist :
+#     if re.match(r'a\.{3,}b', i):
+#         print('패턴 %s : True'%i)
+#     else :
+#         print('패턴 %s : False'%i)
 
-mylist = ['acccb', 'a....b', 'aaab', 'a.cccb']
-for i in mylist :
-    if re.match(r'a\.{3,}b', i):
-        print('패턴 %s : True'%i)
-    else :
-        print('패턴 %s : False'%i)
+def isNum(num):
+    try :
+        float(num)
+        return True
+    except :
+        return False
+    
+print(isNum(4))
+print(isNum('4'))
+print(isNum('s'))
+print(isNum(''))
+        
