@@ -11,12 +11,12 @@ try :
         #print(data)
         print('%s %s %s %s'%data)
         
-    print()
+    print('-'*30)
     cur.execute(sql)
     for r in cur:
         print(r[0], r[1], r[2], r[3])
         
-    print()
+    print('-'*30)
     cur.execute(sql)
     for(code, sang, su, dan) in cur :
         print(code, sang, su, dan)
@@ -26,12 +26,17 @@ try :
     cur.execute(sql, sql_data)
     conn.commit()
      
-    print()
+    print('-'*30)
     sql = "select * from sangdata"
     cur.execute(sql)
     for r in cur:
         print(r[0], r[1], r[2], r[3])
     
+    print('-'*30)
+    cur.execute(sql)
+    for code, sang, su, dan in cur:
+        print(code, sang, su, dan)
+        
     sql = "update sangdata set sang=%s, su=%s, dan=%s where code = %s"
     sql_data=('파이썬', 7, 7000, 11)
     cur.execute(sql, sql_data)
