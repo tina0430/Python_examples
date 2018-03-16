@@ -25,13 +25,23 @@ try :
     sql_data = (11, '상품', 5, 1000) 
     cur.execute(sql, sql_data)
     conn.commit()
-    
+     
+    print()
     sql = "select * from sangdata"
-    cur.execute(sql, sql_data)
+    cur.execute(sql)
     for r in cur:
         print(r[0], r[1], r[2], r[3])
-        
-except ZeroDivisionError as err:
+    
+    sql = "update sangdata set sang=%s, su=%s, dan=%s where code = %s"
+    sql_data=('파이썬', 7, 7000, 11)
+    cur.execute(sql, sql_data)
+    conn.commit()
+    
+    sql = "delete from sangdata where code = %s"
+    cur.execute(sql, (11, ))
+    conn.commit()    
+    
+except Exception as err:
     print('error : ', err)
     conn.rollback()
 finally:
