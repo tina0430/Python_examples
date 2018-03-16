@@ -14,7 +14,7 @@ class MyFrame ( wx.Frame ):
         pass
     
     def initUI(self, parent):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 300,280 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = '사원 조회', pos = wx.DefaultPosition, size = wx.Size( 300,280 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
         
         bSizer = wx.BoxSizer( wx.VERTICAL )
         
@@ -81,7 +81,7 @@ class MyFrame ( wx.Frame ):
             for item in data:
                 line = "{}\t{}\t{}\t{}\n".format(item[0], item[1], item[2], item[3])
                 self.txtSawon.AppendText(line)
-        except ZeroDivisionError as err :
+        except Exception as err :
             pass
         finally : 
             cur.close()
@@ -89,5 +89,6 @@ class MyFrame ( wx.Frame ):
             
 if __name__ == "__main__":
     app = wx.App()
-    frame = MyFrame(None).Show()
+    frame = MyFrame(None)
+    frame.Show()
     app.MainLoop()
