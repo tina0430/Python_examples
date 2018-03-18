@@ -27,5 +27,5 @@ except Exception as err:
     print('error : ', err)
     conn.rollback()
 finally:
-    conn.close()
     cur.close()
+    conn.close()
