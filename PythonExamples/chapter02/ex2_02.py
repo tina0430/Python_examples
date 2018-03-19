@@ -1,3 +1,5 @@
+#type 함수 연습
+
 print('변수 이름으로 키워드(예약어)를 써서는 안 된다.')
 import keyword
 print('키워드 목록 :',keyword.kwlist)

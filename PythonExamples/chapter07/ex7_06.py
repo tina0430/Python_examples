@@ -3,6 +3,7 @@ import wx.xrc
 import MySQLdb
 import sys
 from chapter07.mariaDbConfig import config
+
 class MyFrame ( wx.Frame ):
     
     def __init__( self, parent ):

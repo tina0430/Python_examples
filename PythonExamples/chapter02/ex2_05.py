@@ -1,3 +1,5 @@
+#자료형 str 연습
+
 s='sequence'    #s는 'sequence'란 str type객체를 참조한다
 print()
 print('길이(크기) :', len(s))
