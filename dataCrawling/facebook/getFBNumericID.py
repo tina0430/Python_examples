@@ -34,8 +34,8 @@ def getFacebookNumericID(page_name):
         with open('facebookNIDs.json', 'r+') as idFile :
             ids=json.load(idFile)
             keyList = ids.keys()
-            for i in keyList:
-                if i == page_name : return
+            if page_name in keyList:
+                return
             if ids == {}:
                 idFile.seek(0)
                 idFile.write('{\n\t"%s":%s\n}'%(page_name, retData))
