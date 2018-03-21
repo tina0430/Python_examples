@@ -4,20 +4,21 @@ import datetime #카페 177
 
 def getFacebookNumericID(page_name):
     #기본적인 설정 값 변수 할당
-    with open('id.json', 'r') as myID : jID = json.load(myID)
-    
-    app_id = jID['App_id']
-    app_secret = jID['App_secret_code']
-    access_token = app_id +'|' + app_secret
+    with open('id.json', 'r') as myID : 
+        jID = json.load(myID)
+        app_id = jID['App_id']
+        app_secret = jID['App_secret_code']
+        access_token = app_id +'|' + app_secret
     
     #접근 url 생성
-    url = "https://graph.facebook.com/v2.8/"    #base
-    url += page_name                            #node
-    url += "/?access_token=%s"%(access_token)   #token
+    url = "https://graph.facebook.com/v2.8"    #base
+    url += "/"+page_name                       #node
+    url += "/?access_token=%s"%(access_token)  #token
     print("url : ", url)
     
     data = getRequestUrl(url)
-    with open(page_name+'FacebookNID.json', 'w') as idFile : idFile.write(data)
+    with open(page_name+'FacebookNID.json', 'w') as idFile :
+        idFile.write(data)
         
 def getRequestUrl(url):
     req = urllib.request.Request(url)
@@ -33,6 +34,5 @@ def getRequestUrl(url):
         return None  
       
 if __name__ == "__main__":
-    #page_name = 'jtbcnews'
-    #page_name = "chosun"
+    #'jtbcnews',"chosun"....
     getFacebookNumericID('jtbcnews')
