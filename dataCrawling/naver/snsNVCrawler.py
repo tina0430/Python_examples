@@ -18,7 +18,7 @@ def getRequestUrl(url):
 #         else:
 #             print(response.getcode())
         
-    except ZeroDivisionError as err :
+    except Exception as err :
         print("error type :", err)
         print("[%s] Error for URL : %s"%(datetime.datetime.now(), url))
 
