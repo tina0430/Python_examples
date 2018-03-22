@@ -11,6 +11,7 @@ def getRequestUrl(url):
         req.add_header("X-Naver-Client-Secret", jID['Client_secret'])
     try :
         response = urllib.request.urlopen(req)
+        
         if response.getcode() == 200:
             print('[%s] Url Request Success'%datetime.datetime.now())
             return response.read().decode('utf-8')
