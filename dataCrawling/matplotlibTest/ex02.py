@@ -1,3 +1,5 @@
+#그래프에 한글 표시
+
 from matplotlib import font_manager, rc
 import matplotlib
 import matplotlib.pyplot as plt

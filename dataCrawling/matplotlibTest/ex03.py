@@ -1,3 +1,5 @@
+#그래프 여러개 그리기 연습1
+
 import matplotlib
 import matplotlib.pyplot as plt
 plt.figure()
