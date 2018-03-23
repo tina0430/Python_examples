@@ -8,7 +8,6 @@ url = "http://movie.naver.com/movie/sdb/rank/rmovie.nhn"
 html = urllib.request.urlopen(url)
 
 soup = BeautifulSoup(html, 'html.parser')
-
 url_header = 'http://movie.naver.com'
 tags = soup.findAll('div', attrs={'class':'tit3'})
 for tag in tags:

@@ -18,7 +18,7 @@ def getRequestUrl(url):
         
     except Exception as err:
         print('Error :', err)
-        print('[%s] URL Error :'%(datetime.datetime.now(), url))
+        print('[%s] URL Error %s :'%(datetime.datetime.now(), url))
         return None
     
 def getNatVisitor(access_key, yyyymm, nat_cd, ed_cd):
