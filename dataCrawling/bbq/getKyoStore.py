@@ -1,4 +1,5 @@
-import re
+#2018.03.24 기준
+
 import pandas as pd
 import urllib.request
 import datetime
@@ -21,10 +22,10 @@ def getRequestUrl(url):
 def getKynochonAddress():
     result = []
 
-    for sido in range(1,18):
-        for gungu in count():
+    for sido_idx in range(1,18):
+        for gungu_idx in count():
             url = "http://www.kyochon.com/shop/domestic.asp"
-            url += "?sido1=%s&sido2=%s"%(sido, gungu+1)
+            url += "?sido1=%s&sido2=%s"%(sido_idx, gungu_idx+1)
             print(url)
             data = getRequestUrl(url)
             
@@ -32,15 +33,19 @@ def getKynochonAddress():
                 break
             
             soup = BeautifulSoup(data,'html.parser')
-            ulTag = soup.findAll('ul', attrs={"class":"list"})
-            for ul in ulTag:
-                dlTag = ul.find('dl')
-                store = dlTag.find('dt').text
-                address = dlTag.find('dd').text
-                address_ = address.split(' ')
-                print(address_)
-                sido = "1"
-                gungu = "2"
+            ulTag = soup.find('ul', attrs={"class":"list"})
+            liTags = ulTag.findAll('li')
+            for li in liTags:
+                address = li.a.get('href')
+                if not address:
+                    break
+                address_ = address.split("'")
+                store = address_[3]
+                address = address_[1]
+                address_ = address.split(" ")
+                sido = address_[0]
+                gungu = address_[1]
+                
                 sublist = []
                 sublist.append(store)
                 sublist.append(sido)
@@ -58,7 +63,7 @@ def main():
     print('Kyochon 매장 크롤링 시작')
     result = getKynochonAddress()
     data = pd.DataFrame(result, columns=myColumns)
-    data.to_csv('kyochon.csv', encoding=myEncoding, mode ='w', index=True, index_label='index')
+    data.to_csv('kyochon.csv', encoding=myEncoding, mode ='w', index=True, index_label='idx')
     print('Kyochon 매장 크롤링 종료')
     
 if __name__ == "__main__":
