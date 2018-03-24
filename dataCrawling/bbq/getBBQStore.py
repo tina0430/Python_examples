@@ -1,5 +1,6 @@
+#2018.03.24 기준
+
 import urllib.request
-# import datetime
 import pandas as pd
 from bs4 import BeautifulSoup
 
