@@ -1,4 +1,5 @@
-import re
+#2018.03.24 기준
+
 import pandas as pd
 import urllib.request
 import datetime
@@ -25,6 +26,7 @@ def getRequestUrl(url):
 def getNeneStore():
     result = []
     for page_index in count():
+        print(page_index)
         url = "http://nenechicken.com/subpage/where_list.asp"
         url += '?target_step2=%s' %(urllib.parse.quote('전체'))
         url += '&proc_type=step1'
@@ -50,7 +52,7 @@ def main():
     print('NeNe 매장 크롤링 시작')
     result = getNeneStore()
     data = pd.DataFrame(result, columns=myColumns)
-    data.csv('nene.csv', mode='w', index=True, index_label='index', encoding=myEncoding)
+    data.csv('nene.csv', mode='w', idx=True, index_label='index', encoding=myEncoding)
     print('NeNe 매장 크롤링 종료')
 
 if __name__ == "__main__":
