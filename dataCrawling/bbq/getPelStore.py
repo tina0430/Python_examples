@@ -1,3 +1,5 @@
+#2018.03.24 기준
+
 import pandas as pd
 import urllib.request
 import datetime
@@ -24,6 +26,7 @@ def getRequestUrl(url):
 def getPelicanaAddress():
     result = []
     for page_idx in count():
+        print(page_idx)
         url = "http://pelicana.co.kr/store/stroe_search.html?page=%d&branch_name=&gu=&si=" % (page_idx+1)
         data = getRequestUrl(url)
         soup = BeautifulSoup(data, 'html.parser')
@@ -58,9 +61,8 @@ def main():
     
     print('Pelicana 매장 크롤링 시작')
     result = getPelicanaAddress()
-    print(result)
     data = pd.DataFrame(result, columns=myColumns)
-    data.to_csv('pelicana.csv', mode='w', index=True, index_label='index', encoding=myEncoding)
+    data.to_csv('pelicana.csv', mode='w', idx=True, index_label='index', encoding=myEncoding)
     print('Pelicana 매장 크롤링 종료')
 
 
