@@ -2,7 +2,6 @@ import urllib.request
 import datetime
 import json
 import math
-from MySQLdb.constants.CR import NO_PARAMETERS_EXISTS
 
 def getRequestUrl(url):
     req = urllib.request.Request(url)
@@ -39,7 +38,7 @@ def getTourPointData(item, yyyymm, jsonResult):
     addrCd = 0 if 'addrCd' not in item.keys() else item['addrCd']
     gungu = '' if 'gungu' not in item.keys() else item['gungu']
     sido = '' if 'sido' not in item.keys() else item['sido']
-    resNm = '' if 'resNum' not in item.keys() else item['resNm']
+    resNm = '' if 'resNm' not in item.keys() else item['resNm']
     rnum = 0 if 'rnum' not in item.keys() else item['rnum']
     ForNum = '' if 'csForCnt' not in item.keys() else item['csForCnt']
     NatNum = 0 if 'csNatCnt' not in item.keys() else item['csNatCnt']
@@ -67,6 +66,9 @@ def main(sido, nStartYear, nEndYear):
             while True:
                 jsonData = getTourPointVisitor(access_key, yyyymm, sido, gungu, nPagenum, nItems)
 #                 print(jsonData)
+#                 if not jsonData:
+#                     print('데이터 없다!')
+#                     break
                 if jsonData['response']['header']['resultMsg'] == 'OK':
                     nTotal = jsonData['response']['body']['totalCount']
                      

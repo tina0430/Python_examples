@@ -46,7 +46,7 @@ def getNeneStore():
 
 def main():
     result = []
-    myColumns = ('store', 'sido', 'gundu', 'address')
+    myColumns = ('store', 'sido', 'gungu', 'address')
     myEncoding = 'utf-8'
     
     print('NeNe 매장 크롤링 시작')

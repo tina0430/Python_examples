@@ -81,11 +81,11 @@ def main(nation, nStartYear, nEndYear):
         visitYM.append(item['yyyymm'])
         i = i+1
     
-    with open('%s(%s)_해외방문객정보_%d_%d.json'%(krName, national_code, nStartYear, nEndYear-1), 
+    with open('%s(%s)_해외방문객정보_%d_%d.json'%(krName, national_code, nStartYear, nEndYear), 
               'w', encoding='utf-8') as outfile:
         retJson = json.dumps(jsonResult, indent=4, sort_keys=True, ensure_ascii=False)
         outfile.write(retJson)
     drawGraph(index, visitYM, cnVisit)
     
 if __name__ =="__main__" :
-    main('중국', 2015, 2017)
+    main('미국', 2015, 2017)

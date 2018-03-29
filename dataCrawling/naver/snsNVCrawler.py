@@ -69,7 +69,7 @@ def main(sNode):
         jsonSearch=getNaverSearchResult(sNode, search_text, nStart, display_count)
 
     with open('%s_naver_%s.json'%(search_text, sNode), 'w', encoding='utf-8') as outfile:
-        retJson = json.dumps(jsonResult, indent = 4, sort_keys=True, ensure_ascii=False)
+        retJson = json.dumps(jsonResult, indent=4 , sort_keys=True, ensure_ascii=False)
         outfile.write(retJson)
  
         print('%s_naver_%s.json SAVED'%(search_text, sNode))

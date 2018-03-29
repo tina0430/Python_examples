@@ -58,7 +58,7 @@ def getKynochonAddress():
                 
 def main():
     result = []
-    myColumns = ('store', 'sido', 'gundu', 'address')
+    myColumns = ('store', 'sido', 'gungu', 'address')
     myEncoding = 'utf-8'
     
     print('[%s] 교촌 매장 크롤링 시작' % datetime.datetime.now())

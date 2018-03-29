@@ -3,6 +3,7 @@
 import urllib.request
 import pandas as pd
 from bs4 import BeautifulSoup
+import re 
 
 #TODO LIST
 #1 전처리 - 서울, 서울틀별시 -> 서울특별시로 통일
@@ -18,7 +19,7 @@ def getBbqAddress():
     for tag in tags:
         name = tag.div.span.text
         address = tag.find('div', attrs={'class':'storeNearyByItem-address'}).text
-        addressList = address.split(' ')
+        addressList = address.split()
         sido = addressList[0]
         gungu = addressList[1]
         
@@ -33,7 +34,7 @@ def getBbqAddress():
 
 def main():
     result = []
-    myColumns = ('store', 'sido', 'gundu', 'address')
+    myColumns = ('store', 'sido', 'gungu', 'address')
     myEncoding = 'utf-8'
     
     print('bbq 매장 크롤링 시작')

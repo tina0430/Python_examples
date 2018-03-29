@@ -13,7 +13,7 @@ def getRequestUrl(url):
         responce = urllib.request.urlopen(req)
         code = responce.getcode()
         if code == 200:
-            print('[%s] Url Reqest Success' % datetime.datetime.now())
+#             print('[%s] Url Reqest Success' % datetime.datetime.now())
             return responce.read().decode('utf-8', errors='ignore') #임시방편
         else:
             print('Code :', code)
@@ -56,13 +56,13 @@ def getPelicanaAddress():
 
 def main():
     result = []
-    myColumns = ('store', 'sido', 'gundu', 'address')
+    myColumns = ('store', 'sido', 'gungu', 'address')
     myEncoding = 'utf-8'
     
     print('Pelicana 매장 크롤링 시작')
     result = getPelicanaAddress()
     data = pd.DataFrame(result, columns=myColumns)
-    data.to_csv('pelicana.csv', mode='w', idx=True, index_label='index', encoding=myEncoding)
+    data.to_csv('pelicana.csv', mode='w', index=True, index_label='index', encoding=myEncoding)
     print('Pelicana 매장 크롤링 종료')
 
 
