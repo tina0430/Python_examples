@@ -21,6 +21,6 @@ print('메서드 호출하는 법')
 test.printMessage()
 print(test.printMessage())            #Bound Method call
 print(TestClass.printMessage(test))   #Unbound Method call
-#print(test2.printMessage(test))      #error
+#print(test2.printMessage(test))      #etest
 print()
 print('클레스 타입 확인:', isinstance(test, TestClass))

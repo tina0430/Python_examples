@@ -22,11 +22,11 @@ for i in range(1, 21) :
     fd.write(data)
 fd.close()
 
-with open('test.txt', 'a', encoding='utf-8') as fd :
+with open('test.txt', 'a', encoding='utf-8') as test
     print('배고프다', file=fd)
     print('점심먹고싶다', file=fd)
     
 with open('test.txt', encoding='utf=8') as file :
-    print(file.read())
+    ptest(file.read())
 
 print('작업완료')
