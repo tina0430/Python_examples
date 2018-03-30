@@ -6,6 +6,7 @@ import datetime
 from bs4 import BeautifulSoup
 from itertools import count
 
+
 def getRequestUrl(url):
     req = urllib.request.Request(url)
     
@@ -44,13 +45,14 @@ def getPelicanaAddress():
             sido = address_[0]
             gungu = address_[1]
             
-            sublist = []
-            sublist.append(store)
-            sublist.append(sido)
-            sublist.append(gungu)
-            sublist.append(address)
-            result.append(sublist)
-            
+            if store[-2:] != '지사' and store != 'CNTTEST':
+                sublist = []
+                sublist.append(store)
+                sublist.append(sido)
+                sublist.append(gungu)
+                sublist.append(address)
+                result.append(sublist)
+                
         if bEnd : 
             return result
 
@@ -62,7 +64,7 @@ def main():
     print('Pelicana 매장 크롤링 시작')
     result = getPelicanaAddress()
     data = pd.DataFrame(result, columns=myColumns)
-    data.to_csv('pelicana.csv', mode='w', index=True, index_label='index', encoding=myEncoding)
+    data.to_csv('./storeinfo/pelicana.csv', mode='w', index=True, index_label='index', encoding=myEncoding)
     print('Pelicana 매장 크롤링 종료')
 
 
