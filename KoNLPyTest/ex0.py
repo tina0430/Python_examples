@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 import matplotlib
 from matplotlib import font_manager, rc
 
-import pytagcloud
+# import pytagcloud
 import webbrowser
 from dataCrawling.matplotlibTest.ex02 import font_location
 
