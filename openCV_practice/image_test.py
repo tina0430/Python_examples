@@ -30,7 +30,7 @@ def draw_dots(img_file, colors):
     dst = np.zeros((new_rows, new_cols, 3))
     print(dst.shape)
     
-    R = G = B = 0
+    R = G = B = 1
     for i in range(0, new_rows, unit):
         for j in range(0, new_cols, unit):
             dot = img[i:i+unit, j:j+unit]
@@ -54,12 +54,12 @@ def draw_dots(img_file, colors):
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    color_file = r'./colors.json'
+    color_file = './colors.json'
     colors = {}
     
     with open(color_file, 'r') as f:
         colors = json.load(f)
 
 
-    img_file = r'c:\marill.png'
+    img_file = './test_image2.png'
     draw_dots(img_file, colors)
