@@ -10,6 +10,7 @@ def step_function(x):
 x = np.arange(1.0, 4.1, 0.5)
 y = step_function(x)
 
+#1.0 1.5 2.0
 print("x :", x)
 print("y :", y)
 
