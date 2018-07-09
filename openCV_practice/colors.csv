@@ -1,0 +1,20 @@
+color,R,G,B
+white,1,1,1
+yellow,1,1,0
+light yellow,1,1,0.59
+orange,1,0.4,0
+magenta,1,0,1
+red,1,0,0
+pearl peach,0.98,0.75,0.63
+pink,0.94,0.35,0.94
+light brown,0.8,0.6,0
+brown,0.5,0.25,0
+cyan,0,1,1
+emerald,0,1,0.6
+light green,0,1,0
+green,0,0.5,0
+indigo,0,0.23,0.4
+blue,0,0,1
+gray,0.75,0.75,0.75
+dart gray,0.4,0.4,0.4
+black,0,0,0
